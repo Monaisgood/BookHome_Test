@@ -6,14 +6,16 @@ from faker import Faker
 import allure
 import csv
 fake = Faker("zh_CN")
-base_url = "http://novel.hctestedu.com"
+
+
+from tests.config.config import BASE_URL, USERNAME, PASSWORD
 
 @pytest.fixture(scope="session")
 def get_token():
-    url = f"{base_url}/user/login"
+    url = f"{BASE_URL}/user/login"
     data = {
-        'username' : '13754172545',
-        'password' : '12345'
+        'username' : USERNAME,
+        'password' : PASSWORD
     }
     res = requests.post(url,params=data)
     ans = res.json()
@@ -27,7 +29,7 @@ def header(get_token):
 
 
 def test_rank(header):
-    url = f"{base_url}/book/listRank"
+    url = f"{BASE_URL}/book/listRank"
     data = {
         "type": "3",
         "limit": "1"
@@ -53,7 +55,7 @@ class TestLogin:
             allure.dynamic.description(test_data.get('description'))
             
             # 构建请求数据
-            url = f"{base_url}/user/login"
+            url = f"{BASE_URL}/user/login"
             params = {
                 'username': test_data.get('username'),
                 'password': test_data.get('password')
@@ -92,7 +94,7 @@ class TestBookQuery:
         with allure.step(f"执行用例: {test_data.get('case_name')}"):
             allure.dynamic.title(test_data.get('case_name'))
             
-            url = f"{base_url}/book/listRank"
+            url = f"{BASE_URL}/book/listRank"
             
             # 构建查询参数
             params = {}
@@ -130,7 +132,7 @@ class TestAuthorBook:
             allure.dynamic.title(test_data.get('case_name'))
             allure.dynamic.severity(test_data.get('severity'))
             
-            url = f"{base_url}/author/addBook"
+            url = f"{BASE_URL}/author/addBook"
             
             # 构建请求数据
             data = {
