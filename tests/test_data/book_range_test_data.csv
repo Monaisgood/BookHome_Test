@@ -1,0 +1,9 @@
+case_id,case_name,type,limit,expected_code,actual_code
+book_range_01,正确获取排行榜,0,2,200,
+book_range_02,正确获取排行榜,1,2,200,
+book_range_03,正确获取排行榜,3,2,200,
+book_range_04,错误获取排行榜（empty type),,2,1004,200
+book_range_05,错误获取排行榜（empty limit),3,,1004,200
+book_range_06,错误获取排行榜（wrong type),-1,1,1004,200
+book_range_07,错误获取排行榜（wrong type),4,1,1004,200
+book_range_08,错误获取排行榜（wrong limit),3,-1,1004,200

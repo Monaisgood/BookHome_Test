@@ -1,0 +1,7 @@
+case_id,case_name,username,password,expected_code,check_token
+login_01,µÇÂ½³É¹¦,13754172545,12345,200,TRUE
+login_02,µÇÂ¼Ê§°Ü(wrong username),13754172540,12345,1004,FALSE
+login_03,µÇÂ¼Ê§°Ü(wrong password),13754172545,54321,1004,FALSE
+login_04,µÇÂ¼Ê§°Ü(empty username),,12345,1004,FALSE
+login_05,µÇÂ¼Ê§°Ü(empty password),13754172545,,1004,FALSE
+login_06,µÇÂ¼Ê§°Ü(empty username and password),,,1004,FALSE

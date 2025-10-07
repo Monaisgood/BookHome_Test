@@ -1,0 +1,14 @@
+case_id,case_name,if_have_token,workDirection,catId,catName,bookName,picUrl,bookDesc,severity,expected_code,actural_code
+author_addbook_01,正确修改,TRUE,0,1,玄幻奇幻,author_addbook_01,,author_addbook_01,p0,200,
+author_addbook_02,正确修改,TRUE,0,7,女生频道,author_addbook_02,,author_addbook_02,p0,200,
+author_addbook_03,正确修改,TRUE,1,4,历史军事,author_addbook_03,,author_addbook_03,p0,200,
+author_addbook_04,正确修改,TRUE,1,4,历史军事,author_addbook_04,C:\Users\admin\Desktop\d26949295df44dcb7897549e7f5c31f5.png,author_addbook_04,p0,200,
+author_addbook_05,修改失败（no token）,,0,5,科幻灵异,author_addbook_05,,author_addbook_05,p1,1001,
+author_addbook_06,修改失败(invalid workdirection),TRUE,-1,1,玄幻奇幻,author_addbook_06,,author_addbook_06,p3,1004,200
+author_addbook_07,修改失败(invalid workdirection),TRUE,2,1,玄幻奇幻,author_addbook_07,,author_addbook_07,p3,1004,200
+author_addbook_08,修改失败(catid and catname didn’t match),TRUE,1,5,女生频道,author_addbook_08,,author_addbook_08,p3,1004,200
+author_addbook_09,修改失败(empty catid),TRUE,1,,女生频道,author_addbook_09,,author_addbook_09,p2,1004,200
+author_addbook_10,修改失败(empty catname),TRUE,1,5,,author_addbook_10,,author_addbook_10,p2,1004,200
+author_addbook_11,修改失败(wrong catid),TRUE,1,10,历史军事,author_addbook_11,,author_addbook_11,p2,1004,200
+author_addbook_12,修改失败(wrong catename),TRUE,1,2,我爱我家,author_addbook_11,,author_addbook_12,p2,4003,
+author_addbook_13,修改失败(invalid picurl),TRUE,1,5,科幻灵异,author_addbook_12,C:\Users\admin\Desktop\niii.png,author_addbook_13,p1,1004,
