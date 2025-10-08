@@ -9,7 +9,6 @@ pipeline {
 
   options {
     timestamps()
-    ansiColor('xterm')
   }
 
   stages {
@@ -47,7 +46,7 @@ pipeline {
     stage('Archive & Allure') {
       steps {
         archiveArtifacts artifacts: 'allure-results/**', allowEmptyArchive: true
-        // 先在 Jenkins 安装 Allure Jenkins 插件
+        // 如果你装了 Allure 插件，这里会在侧边出现 Allure Report
         allure([
           includeProperties: false,
           jdk: '',
@@ -59,6 +58,6 @@ pipeline {
 
   post {
     success { echo '测试执行完成 ✅' }
-    failure { echo '测试失败 ❌（看上面的报错）' }
+    failure { echo '测试失败 ❌（看控制台上面的报错）' }
   }
 }
